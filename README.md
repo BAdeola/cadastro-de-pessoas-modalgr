@@ -17,6 +17,7 @@ Este projeto é uma aplicação de cadastro de pessoas desenvolvida utilizando A
 - SASS(scss): Estilização da aplicação.
 - HTTP Client: Para fazer chamadas à API ViaCEP.
 - Reactive Forms: Para controle e validação dos formulários.
+- Figma para Design (https://www.figma.com/design/ZvxgxNULu6boI1uK37Sz7W/Untitled?node-id=0-1&t=1uJzJz5o5cPqAlk7-1)
 
 ## Como Rodar o Projeto
 
