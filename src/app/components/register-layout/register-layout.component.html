@@ -1,28 +1,79 @@
 <main>
-    <section>
-        <img src="/assets/images/logo.svg" alt="ModalGR">
-        <img src="/assets/images/imagem-barra-lateral.svg" alt="Colaboração">
+    <section class="images">
+      <img src="/assets/images/logo.svg" alt="ModalGR" class="logo"/>
     </section>
-    <section>
-        <h1>Cadastro de Pessoas</h1>
-        <h2>Quer fazer parte da equipe ModalGR? Se inscreva no nosso Banco de Talentos.</h2>
-        <p>Nome</p><p>*Campo Obrigatório</p>
-        <input type="text">
-        <p>CPF</p><p>*Campo Obrigatório</p>
-        <input type="text">
-        <p>Data de Nascimento</p><p>*Campo Obrigatório</p>
-        <input type="date">
-        <p>CEP</p><p>*Campo Obrigatório</p>
-        <input type="text">
-        <p>Estado</p>
-        <input type="text">
-        <p>Cidade</p>
-        <input type="text">
-        <p>Bairro</p>
-        <input type="text">
-        <p>Logadouro</p>
-        <input type="text">
+  
+    <section class="form">
+        <div *ngIf="!cadastroRealizado" class="titulos">
+            <h1>Cadastro de Pessoas</h1>
+            <h2>Quer fazer parte da equipe ModalGR?<br />Se inscreva no nosso Banco de Talentos.</h2>
+        </div>
+        
+        <form *ngIf="!cadastroRealizado" [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
+            <div class="titulos">
+                <label for="nome">Nome <span class="vermelho">*Campo Obrigatório</span></label>
+                <input id="nome" formControlName="nome" />
+            </div>
 
-        <button>Cadastrar</button>
+            <div class="titulos">
+                <label for="email">Email <span class="vermelho">*Campo Obrigatório</span></label>
+                <input id="email" formControlName="email" />
+            </div>
+
+            <div class="fileira">
+                <div>
+                    <label for="cpf">CPF <span class="vermelho">*Campo Obrigatório</span></label>
+                    <input id="cpf" formControlName="cpf" (input)="formatarCPF()" />
+                </div>
+
+                <div>
+                    <label for="dataNascimento">Data de Nascimento <span class="vermelho">*Campo Obrigatório</span></label>
+                    <input id="dataNascimento" formControlName="dataNascimento" type="date" />
+                </div>
+
+                <div>
+                    <label for="cep">CEP <span class="vermelho">*Campo Obrigatório</span></label>
+                    <input id="cep" formControlName="cep" (input)="formatarCEP()" (blur)="buscarEndereco()" />
+                </div>
+
+                <div>
+                    <label for="bairro">Bairro</label>
+                    <input id="bairro" formControlName="bairro" [disabled]="true" />
+                </div>
+
+                <div>
+                    <label for="cidade">Cidade</label>
+                    <input id="cidade" formControlName="cidade" [disabled]="true" />
+                </div>
+
+                <div>
+                    <label for="estado">Estado</label>
+                    <input id="estado" formControlName="estado" [disabled]="true" />
+                </div>
+            </div>
+
+            <div class="titulos">
+                <label for="logradouro">Logradouro</label>
+                <input id="logradouro" formControlName="logradouro" [disabled]="true" />
+            </div>
+            <div class="botao">
+                <button type="submit" [disabled]="cadastroForm.invalid">Cadastrar</button>
+            </div>
+        </form>
+
+        <!-- lista de dados da tabela -->
+        <p class="titulos" *ngIf="cadastroRealizado">Cadastro Realizado com Sucesso!</p>
+        <ul *ngIf="cadastroRealizado" class="form__tabela">
+            <li><strong>Nome:</strong> {{ registros.nome }}</li>
+            <li><strong>Email:</strong> {{ registros.email }}</li>
+            <li><strong>CPF:</strong> {{ registros.cpf }}</li>
+            <li><strong>Data de Nascimento:</strong> {{ formatarData(registros.dataNascimento) }}</li>
+            <li><strong>Idade:</strong> {{ registros.idade }}</li>
+            <li><strong>CEP:</strong> {{ registros.cep }}</li>
+            <li><strong>Logradouro:</strong> {{ registros.logradouro }}</li>
+            <li><strong>Bairro:</strong> {{ registros.bairro }}</li>
+            <li><strong>Cidade:</strong> {{ registros.cidade }}</li>
+            <li><strong>Estado:</strong> {{ registros.estado }}</li>
+        </ul>
     </section>
 </main>

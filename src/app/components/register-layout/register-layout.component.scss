@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "../../../style/variables.scss";
+@import "../../../style/mixins.scss";
+
+main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", serif;
+    background-color: $first-color;
+
+    //configurações da imagem que fica ao lado esquerdo
+    .images{
+        img{
+            height: 100vh;
+        }
+    }
+
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        width: 100%;
+        height: 100vh;
+
+        p{
+            text-align: center;
+            font-size: 5rem;
+            font-weight: 600;
+            color: $text-color;
+            width: 70rem;
+            margin-bottom: 3rem;
+        }
+
+        .botao{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            button{
+                cursor: pointer;
+                box-shadow: 0 5px 7px rgba(0, 0, 0, 16%);
+                margin-top: 4rem;
+                margin-bottom: 2rem;
+                background-color: $second-color;
+                border: none;
+                border-radius: 5px;
+                height: 6rem;
+                min-height: 5rem;
+                width: 20.7rem;
+                font-size: 2.8rem;
+                color: $text-color;
+                font-weight: 600;
+                transition: background-color 0.4s ease;
+            }
+    
+            button:hover{
+                background-color: $background;
+            }
+            
+            button:active{
+                transform: scale(0.98);
+            }
+        }
+        
+        .titulos{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            
+
+            h1{
+                text-align: left;
+                font-size: 7rem;
+                font-weight: 700;
+                color: $text-color;
+                width: 70rem;
+            }
+    
+            h2{
+                text-align: left;
+                font-weight: 300;
+                font-size: 2rem;
+                color: $text-color;
+                margin-bottom: 2rem;
+                width: 380px;
+                margin-bottom: 6rem;
+            }
+        }
+
+        label{
+            text-align: left;
+            font-weight: 500;
+            font-size: 2rem;
+            color: $text-color;
+            margin-bottom: 1rem;
+            width: 70rem;
+        }
+
+        .vermelho{
+            color: $warning-color;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        input{
+            border: none;
+            opacity: 56%;
+            box-shadow: 0 5px 7px rgba(0, 0, 0, 16%);
+            border-radius: 0.5rem;
+            height: 48px;
+            min-height: 48px;
+            width: 70rem;
+            margin-bottom: 2rem;
+
+            font-size: 2rem;
+            font-family: "Inter", serif;
+            padding-left: 1rem;
+        }
+
+        .fileira{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 70rem;
+            
+            .input-group {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            label{
+                width: 34rem;
+            }
+            input{
+                border: none;
+                border-radius: 0.5rem;
+                height: 4.8rem;
+                width: 34rem;
+                margin-right: 2rem;
+            } 
+        }
+
+        &__tabela{
+            display: flex;
+            flex-direction: column;
+            background-color: $tabela;
+            opacity: 56%;
+            border: none;
+            border-radius: 5px;
+
+            font-family: "Inter", serif;
+
+            list-style-type: none;
+            font-size: 3rem;
+            gap: 1rem;
+            padding: 2rem;
+            margin-bottom: 10rem;
+        }
+    }
+}

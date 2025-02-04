@@ -1,27 +1,49 @@
-# RegisterPage
+# Sistema de Cadastro de Pessoas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+Este projeto é uma aplicação de cadastro de pessoas desenvolvida utilizando Angular. Ele permite aos usuários realizar o cadastro de informações pessoais, como nome, CPF, e-mail, data de nascimento, entre outras. Após o cadastro, as informações são exibidas em uma lista organizada na própria tela.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Cadastro de Pessoa: Permite o usuário preencher um formulário com informações como nome, CPF, e-mail, data de nascimento, CEP, etc.
+- Validação de Formulário: Valida os campos obrigatórios e os campos de entrada, como CPF e CEP.
+- Busca de Endereço: Utiliza a API ViaCEP para preencher automaticamente os campos de endereço com base no CEP informado.
+- Exibição das Informações: Após o envio do formulário, as informações cadastradas são exibidas em uma lista.
+- Data Formatada: A data de nascimento é formatada para o formato brasileiro (DD/MM/YYYY).
+- Botão de Voltar: Permite ao usuário retornar ao formulário após visualizar os dados cadastrados.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular: Framework utilizado para o desenvolvimento do front-end.
+- SASS(scss): Estilização da aplicação.
+- HTTP Client: Para fazer chamadas à API ViaCEP.
+- Reactive Forms: Para controle e validação dos formulários.
 
-## Build
+## Como Rodar o Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone o repositório:
+git clone https://github.com/BAdeola/cadastro-de-pessoas-modalgr.git
 
-## Running unit tests
+2. Navegue até o diretório do projeto:
+cd cadastro-de-pessoas-modalgr
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Instale as dependências:
+npm install
 
-## Running end-to-end tests
+4. Inicie a aplicação:
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. Acesse a aplicação no seu navegador:
+http://localhost:4200/
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Estrutura do Projeto
+src/
+├── app/
+│   ├── register-layout/
+│   │   ├── register-layout.component.ts
+│   │   ├── register-layout.component.html
+│   │   └── register-layout.component.scss
+├── assets/
+│   └── images/
+│       └── logo.svg
+└── environments/
+    └── environment.ts
