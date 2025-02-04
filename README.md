@@ -34,16 +34,3 @@ ng serve
 
 5. Acesse a aplicação no seu navegador:
 http://localhost:4200/
-
-## Estrutura do Projeto
-src/
-├── app/
-│   ├── register-layout/
-│   │   ├── register-layout.component.ts
-│   │   ├── register-layout.component.html
-│   │   └── register-layout.component.scss
-├── assets/
-│   └── images/
-│       └── logo.svg
-└── environments/
-    └── environment.ts
